@@ -24,7 +24,10 @@
       "Bash(sed *)",
       "Bash(awk *)",
       "Bash(jq *)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Edit(*)",
+      "Write(*)",
+      "Read(*)"
     ],
     "deny": [
       "Bash(sudo *)",

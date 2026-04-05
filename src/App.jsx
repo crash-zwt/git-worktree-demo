@@ -3,6 +3,7 @@ import CookieConsent from './components/CookieConsent';
 import Hero from './components/Hero';
 import SocialProof from './components/SocialProof';
 import Features from './components/Features';
+import Faq from './components/Faq';
 import UseCases from './components/UseCases';
 import Pricing from './components/Pricing';
 import CallToAction from './components/CallToAction';
@@ -18,6 +19,7 @@ function App() {
                 <SocialProof />
                 <Features />
                 <UseCases />
+                <Faq />
                 <Pricing />
                 <CallToAction />
             </main>
