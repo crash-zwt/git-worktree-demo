@@ -39,13 +39,14 @@ git diff --cached
 | 优先级 | 维度 | 范例 |
 |--------|------|------|
 | 1 | **项目脚手架 / 设定档** | `package.json`, `vite.config.*`, `.gitignore`, `README.md`, `tsconfig.json` |
-| 2 | **资料层 / config data** | `src/data/*.js`, `src/constants/*`, `src/config/*` |
-| 3 | **元件（按元件名称分组）** | `src/components/Hero.jsx` + 对应测试 + 对应样式 |
-| 4 | **页面 / 路由** | `src/pages/*`, `src/routes/*`, `src/App.jsx` |
-| 5 | **全域样式** | `src/index.css`, `src/styles/*`, `src/theme/*` |
-| 6 | **工具 / hooks / 类型** | `src/utils/*`, `src/hooks/*`, `src/types/*` |
-| 7 | **测试** | `__tests__/*`, `*.test.*`, `*.spec.*` |
-| 8 | **文件 / 其他** | `docs/*`, `*.md`（非 README）, 其他杂项 |
+| 2 | **Claude Workspace / Skill 配置** | `.claude/skills/*`, `.claude/settings.json`, `.claude/commands/*`, `.claude/workflows/*` |
+| 3 | **资料层 / config data** | `src/data/*.js`, `src/constants/*`, `src/config/*` |
+| 4 | **元件（按元件名称分组）** | `src/components/Hero.jsx` + 对应测试 + 对应样式 |
+| 5 | **页面 / 路由** | `src/pages/*`, `src/routes/*`, `src/App.jsx` |
+| 6 | **全域样式** | `src/index.css`, `src/styles/*`, `src/theme/*` |
+| 7 | **工具 / hooks / 类型** | `src/utils/*`, `src/hooks/*`, `src/types/*` |
+| 8 | **测试** | `__tests__/*`, `*.test.*`, `*.spec.*` |
+| 9 | **文件 / 其他** | `docs/*`, `*.md`（非 README）, 其他杂项 |
 
 #### 分群规则
 
@@ -113,6 +114,7 @@ git commit -m "<type>(<scope>): <subject>"
 - 资料层：`data`
 - 全域样式：`style`
 - 项目设定：`project`
+- Claude Workspace / Skill：`workspace`
 - 多个范围：用最主要的一个，不要用斜线串接
 
 **subject 规则：**
@@ -141,3 +143,4 @@ git log --oneline -20
 - **有 `.env` 或敏感文件**：提醒用户确认是否应被 gitignore，不自动提交
 - **变更量极大（> 50 个文件）**：先产出分组摘要，请用户确认后再执行
 - **用户已有部分 staged 变更**：尊重已 staged 的状态，将其视为一个独立群组或合并到最相关的群组
+- **`.claude/` 目录有变更**：workspace/skill 配置变更（如 `settings.json`、`.claude/commands/`、`.claude/workflows/*` 等）必须单独列出，由用户决定是否一并提交
